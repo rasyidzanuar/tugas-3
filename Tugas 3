@@ -1,0 +1,65 @@
+<?php
+// Mulai sesi
+session_start();
+
+// Proses form jika form sudah di-submit
+jika (isset( $ _POST [ 'kirim' ])){
+    // Ambil data dari formulir
+    $ nama = $ _POST [ 'nama' ];
+    $ alamat = $ _POST [ 'alamat' ];
+    $ tanggal_lahir = $ _POST [ 'tanggal_lahir' ];
+    $ jenis_kelamin = $ _POST [ 'jenis_kelamin' ];
+    $ agama = $ _POST [ 'agama' ];
+
+    // Simpan data ke dalam sesi
+    $ _SESI [ 'nama' ] = $ nama ;
+    $ _SESSION [ 'alamat' ] = $ alamat ;
+    $ _SESSION [ 'tanggal_lahir' ] = $ tanggal_lahir ;
+    $ _SESSION [ 'jenis_kelamin' ] = $ jenis_kelamin ;
+    $ _SESI [ 'agama' ] = $ agama ;
+
+    // Redirect ke halaman lain
+    header(" Lokasi:hasil_biodata.php ");
+    KELUAR();
+}
+?>
+
+<!DOCTYPE html >
+<html> _ _
+<kepala> _ _
+    < title > Formulir Biodata dengan Sesi </ title >
+</kepala> _ _
+<tubuh> _ _
+    < h1 > Formulir Biodata dengan Sesi </ h1 >
+
+    < form  method =" post " action ="" >
+        < label  untuk =" nama " > Nama: </ label >
+        < input  type =" text " name =" nama " id =" nama " wajib > < br > < br >
+
+        < label  untuk =" alamat " > Alamat: </ label >
+        < nama textarea  =" alamat " id =" alamat " wajib > </ textarea > < br > < br >
+
+        < label  untuk =" tanggal_lahir " > Tanggal Lahir: </ label >
+        < input  type =" date " name =" tanggal_lahir " id =" tanggal_lahir " wajib diisi > < br > < br >
+
+        < label  for =" jenis_kelamin " > Jenis Kelamin: </ label >
+        < input  type =" radio " name =" jenis_kelamin " value =" Laki-laki " id =" jenis_kelamin_laki " wajib >
+        < label  for =" jenis_kelamin_laki " > Laki-laki </ label >
+        < input  type =" radio " name =" jenis_kelamin " value =" Perempuan " id =" jenis_kelamin_perempuan " wajib >
+        < label  for =" jenis_kelamin_perempuan " > Perempuan </ label > < br > < br >
+
+        < label  untuk =" agama " > Agama: </ label >
+        < pilih  nama =" agama " id =" agama " wajib >
+            < option  value ="" > - Pilih Agama - </ option >
+            < nilai opsi  =" Islam " > Islam </ opsi >
+            < nilai opsi  =" Kristen " > Kristen </ opsi >
+            < option  value =" Katolik " > Katolik </ option >
+            < nilai pilihan  =" Hindu " > Hindu </ pilihan >
+            < nilai opsi  =" Buddha " > Buddha </ opsi >
+            < nilai opsi  =" Konghucu " > Konghucu </ opsi >
+        </ pilih > < br > < br >
+
+        < input  type =" kirim " nama =" kirim " value =" KIRIM " >
+    </bentuk> _ _
+</tubuh> _ _
+</html> _ _
